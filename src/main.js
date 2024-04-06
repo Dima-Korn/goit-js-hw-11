@@ -18,6 +18,7 @@ searchForm.addEventListener('submit', function (event) {
   event.preventDefault();
   const searchQuery = searchInput.value;
   if (searchQuery.length >= 3) {
+    clearGallery();
     showLoadingAnimation();
     fetchData(searchQuery)
       .then(data => {
@@ -28,7 +29,6 @@ searchForm.addEventListener('submit', function (event) {
             position: 'topCenter',
           });
         } else {
-          clearGallery();
           renderGalleryItems(data.hits);
           const lightbox = new SimpleLightbox('.gallery a');
           lightbox.refresh();
