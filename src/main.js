@@ -28,6 +28,7 @@ searchForm.addEventListener('submit', function (event) {
             position: 'topCenter',
           });
         } else {
+          clearGallery();
           renderGalleryItems(data.hits);
           const lightbox = new SimpleLightbox('.gallery a');
           lightbox.refresh();
