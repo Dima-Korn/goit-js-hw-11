@@ -13,6 +13,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 const searchInput = document.getElementById('searchInput');
 const searchForm = document.getElementById('searchForm');
 const searchButton = document.querySelector('.search-btn');
+const lightbox = new SimpleLightbox('.gallery a');
 
 searchForm.addEventListener('submit', function (event) {
   event.preventDefault();
@@ -30,7 +31,6 @@ searchForm.addEventListener('submit', function (event) {
           });
         } else {
           renderGalleryItems(data.hits);
-          const lightbox = new SimpleLightbox('.gallery a');
           lightbox.refresh();
         }
       })
